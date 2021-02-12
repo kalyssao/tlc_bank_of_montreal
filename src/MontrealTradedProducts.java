@@ -23,7 +23,7 @@ public interface MontrealTradedProducts {
      * @param product the product traded
      * @param quantity the quantity traded
      */
-    void trade(Product product, int quantity);
+    void trade(Product product, int quantity) throws ProductNotRegisteredException;
 
     /**
      * Calculates the total quantity of all the registered
@@ -31,7 +31,6 @@ public interface MontrealTradedProducts {
      * @return the total quantity traded
      */
     int totalTradeQuantityForDay();
-
     /**
      * Calculates the total value of all the registered traded products
      * so far today. This is done by multiplying the value by the quantity 
@@ -41,4 +40,5 @@ public interface MontrealTradedProducts {
      *         registered in the system
      */
     double totalValueOfDaysTradedProducts();
+
 }
