@@ -1,5 +1,5 @@
 public class ProductAlreadyRegisteredException extends Exception {
-    ProductAlreadyRegisteredException(String s){
+    ProductAlreadyRegisteredException(){
         super("Product already registered!");
     }
 }
