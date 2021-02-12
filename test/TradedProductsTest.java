@@ -14,7 +14,7 @@ public class TradedProductsTest {
 
 
     @Test
-    public static void testTotalValueOfDaysTradedProducts(){
+    public void testTotalValueOfDaysTradedProducts(){
         ProductPricingService mockPricingService = mock(ProductPricingService.class);
         when(mockPricingService.price("HKEX", "Z", 3, 1997)).thenReturn(600.0);
         when(mockPricingService.price("NYSE", "A")).thenReturn(400.0);
@@ -38,7 +38,7 @@ public class TradedProductsTest {
     }
 
     @Test
-    public static void totalTradeQuantityForDay(){
+    public void totalTradeQuantityForDay(){
         ProductPricingService mockPricingService = mock(ProductPricingService.class);
         when(mockPricingService.price("HKEX", "Z", 3, 1997)).thenReturn(600.0);
         when(mockPricingService.price("NYSE", "A")).thenReturn(400.0);
@@ -62,7 +62,7 @@ public class TradedProductsTest {
     }
 
     @Test (expected = ProductNotRegisteredException.class)
-    public static void testTrade() throws ProductNotRegisteredException{
+    public void testTrade() throws ProductNotRegisteredException{
         ProductPricingService mockPricingService = mock(ProductPricingService.class);
         when(mockPricingService.price("HKEX", "Z", 3, 1997)).thenReturn(600.0);
         when(mockPricingService.price("NYSE", "A")).thenReturn(400.0);
@@ -88,7 +88,7 @@ public class TradedProductsTest {
     }
 
     @Test
-    public static void testAddNewProduct() {
+    public void testAddNewProduct() {
 
 
     }
