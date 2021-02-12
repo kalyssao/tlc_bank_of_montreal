@@ -79,7 +79,7 @@ public class TradedProductsTest {
             tradedProducts.addNewProduct(futures2);
 
         } catch (ProductAlreadyRegisteredException e){
-            System.out.println(e);
+
         }
 
         tradedProducts.trade(stocks2, 30);
@@ -88,7 +88,7 @@ public class TradedProductsTest {
     }
 
     @Test (expected = ProductAlreadyRegisteredException.class)
-    public void testAddNewProduct() {
+    public void testAddNewProduct() throws ProductAlreadyRegisteredException {
         ProductPricingService mockPricingService = mock(ProductPricingService.class);
         when(mockPricingService.price("HKEX", "Z", 3, 1997)).thenReturn(600.0);
         when(mockPricingService.price("NYSE", "A")).thenReturn(400.0);
@@ -97,8 +97,8 @@ public class TradedProductsTest {
         Stocks stocks1 = new Stocks("S001", "A", "NYSE", mockPricingService);
         try {
             tradedProducts.addNewProduct(stocks1);
-        } catch (ProductAlreadyRegisteredException){
-            System.out.println("Exception!");
+        } catch (ProductAlreadyRegisteredException e){
+
         }
         Stocks stocks1 = new Stocks("S001", "A", "NYSE", mockPricingService);
         tradedProducts.addNewProduct(stocks1);
